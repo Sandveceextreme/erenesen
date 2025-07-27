@@ -188,8 +188,8 @@ getScript('//api.adinplay.com/libs/aiptag/pub/AGV/agar.live/tag.min.js', initAip
 <option maxlength="15" value="ffa4.agariodns.cyou" data-itr="FFA72">CRAZY BOMB 3</option>
 </select>
 <input type="hidden" id="txtSkin" class="form-control" autocomplete="off" maxlength="15">
-<button class="mlacpa-play-button" onclick="playGame(); playnow(); typeof googletag !== 'undefined' && googletag.pubads().refresh(); return false;">OYNA</button>
-<button class="mlacpa-spectate-button" onclick="spectate(); return false;">İZLE</button>
+<button class="mlacpa-play-button" onclick="ar1(); typeof googletag !== 'undefined' && googletag.pubads().refresh(); return false;">OYNA</button>
+<button class="mlacpa-spectate-button" onclick="xl2(); return false;">İZLE</button>
 <div class="form-group" style="witdh:336px;height:300px">
 <hr>
 <center>
@@ -483,8 +483,35 @@ getGameMode();</script>
 <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="4584b754a552bbac87934f4d-|49" defer=""></script><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon="{&quot;rayId&quot;:&quot;7f2d2f9e0d397222&quot;,&quot;version&quot;:&quot;2023.7.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;27d9399612d24b29bd77b5f9d147c302&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
 
 
+<script>
+  function simulateKeyPress(key) {
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: key }));
+    document.dispatchEvent(new KeyboardEvent('keyup', { key: key }));
+    console.log("Simulated key press:", key);
+  }
 
+  function ar1() {
+    playGame();
+    setTimeout(() => {
+      playGame();
 
+      setTimeout(() => {
+        simulateKeyPress('b');
+        setTimeout(() => {
+          simulateKeyPress('"');
+        }, 1000);
+      }, 1000);
+
+    }, 1000);
+  }
+
+  function xl2() {
+    simulateKeyPress('b');
+    setTimeout(() => {
+      simulateKeyPress('"');
+    }, 1000);
+  }
+</script>
 
 
 
