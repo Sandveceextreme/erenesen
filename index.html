@@ -1,4 +1,26 @@
-<html lang="tr&quot;"><head><script language="JavaScript">
+ <html lang="tr&quot;"><head><script language="JavaScript">
+<!--
+var password;
+var pass1="emresoftware1881";
+
+
+var savedPassword = localStorage.getItem("savedPassword");
+
+if (savedPassword == pass1) {
+  
+} else {
+    // Kayıtlı şifre yoksa kullanıcıdan tekrar şifre iste
+    password = prompt('Password:', '');
+
+    if (password == pass1) {
+        alert('Succes!');
+       
+        localStorage.setItem("savedPassword", pass1);
+    } else {
+        window.location = "";
+    }
+}
+//-->
 </script>
 
 
@@ -104,14 +126,17 @@ getScript('//api.adinplay.com/libs/aiptag/pub/AGV/agar.live/tag.min.js', initAip
 <div class="main-login-area-left-panels-area">
 <div id="mlaltb-settings-panel" class="main-login-area-left-panel-box active">
 <div class="mlaltb-check-row">
-<label for="noSkin"><input type="checkbox" id="noSkin" onchange="if (!window.__cfRLUnblockHandlers) return false; setHideSkins();" data-cf-modified-4584b754a552bbac87934f4d-="">Skinleri gizle</label>
+<label for="noSkin">
+  <input type="checkbox" id="noSkin" onchange="setHideSkins()"> Skinleri gizle
+</label>
 </div>
 <div class="mlaltb-check-row">
 <label for="noNames"><input type="checkbox" id="noNames" onchange="if (!window.__cfRLUnblockHandlers) return false; setHideNames();" data-cf-modified-4584b754a552bbac87934f4d-="">İsimleri gizle</label>
 </div>
 <div class="mlaltb-check-row">
-<label for="darkTheme"><input type="checkbox" id="darkTheme" onchange="if (!window.__cfRLUnblockHandlers) return false; setDarkTheme();" data-cf-modified-4584b754a552bbac87934f4d-="">Siyah Tema</label>
-</div>
+<label for="darkTheme">
+  <input type="checkbox" id="darkTheme" onchange="setDarkTheme()"> Siyah Tema
+</label></div>
 <div class="mlaltb-check-row">
 <label for="showScore"><input type="checkbox" id="showScore" onchange="if (!window.__cfRLUnblockHandlers) return false; setShowScore();" data-cf-modified-4584b754a552bbac87934f4d-="">Puanları göster</label>
 </div>
@@ -177,12 +202,20 @@ getScript('//api.adinplay.com/libs/aiptag/pub/AGV/agar.live/tag.min.js', initAip
 <div class="main-login-area-center-play-area">
 <div class="mlacpa-name-box"><input placeholder="nick" type="text" autofocus="" id="nick" maxlength="20" value="agar.live"><button onclick="if (!window.__cfRLUnblockHandlers) return false; window.open('https://fancy.agar.live', '_blank')" data-cf-modified-4584b754a552bbac87934f4d-="">Fancy Nick</button></div>
 <select class="mlacpa-server-select" id="gamemode" onchange="if (!window.__cfRLUnblockHandlers) return false; setserver();" data-cf-modified-4584b754a552bbac87934f4d-="">
-<option maxlength="15" value="ffa1.agariodns.cyou" data-itr="FFA1">FFA 1</option>
-<option maxlength="15" value="ffa2.agariodns.cyou" data-itr="FFA2">FFA 2</option>
-<option maxlength="15" value="ffa3.agariodns.cyou" data-itr="FFA3">FFA 3</option>
-<option maxlength="15" value="pop1.agariodns.cyou" data-itr="FFA71">VIRUS BOMB 1</option>
-<option maxlength="15" value="pop2.agariodns.cyou" data-itr="FFA72">VIRUS BOMB 2</option>
-<option maxlength="15" value="ffa4.agariodns.cyou" data-itr="FFA72">CRAZY BOMB 3</option>
+<option maxlength="15" value="ffa1.agariodns.cyou" data-itr="FFA1">FFA 1 - EU</option>
+<option maxlength="15" value="ffa2.agariodns.cyou" data-itr="FFA2">FFA 2 - USA</option>
+<option maxlength="15" value="ffa3.agariodns.cyou" data-itr="FFA3">FFA 3 - EU</option>
+<option maxlength="15" value="ffa44.agariodns.cyou" data-itr="FFA4">FFA 4 - EU</option>
+<option maxlength="15" value="pop1.agariodns.cyou" data-itr="FFA71">VIRUS BOMB 1 - EU</option>
+<option maxlength="15" value="pop2.agariodns.cyou" data-itr="FFA72">VIRUS BOMB 2 - EU</option>
+<option maxlength="15" value="ffa4.agariodns.cyou" data-itr="FFA72">CRAZY BOMB 3 - USA</option>
+<option maxlength="15" value="ffa8.agariodns.cyou" data-itr="FFA8">FFA 8 - USA</option>
+<option maxlength="15" value="ffa9.agariodns.cyou" data-itr="FFA9">FFA 9 - USA</option>
+<option maxlength="15" value="ffa10.agariodns.cyou" data-itr="FFA10">FFA 10 - USA</option>
+<option maxlength="15" value="rainbow.agariodns.cyou" data-itr="FFA7">RAINBOW - EU</option>
+<option maxlength="16" value="instant.agariodns.cyou" data-itr="merge">INSTANT MERGE - EU</option>
+<option maxlength="15" value="team.agariodns.cyou" data-itr="FFAT">TEAMS - EU </option>
+<option maxlength="15" value="black.agariodns.cyou" data-itr="FFAB">BLACKHOLE - EU</option>
 </select>
 <input type="hidden" id="txtSkin" class="form-control" autocomplete="off" maxlength="15">
 <div class="form-group" style="witdh:336px;height:300px">
@@ -446,12 +479,14 @@ Sonuç olarak, <strong>agario oyna</strong> basit ama eğlenceli oynanışı, d�
         };
     </script>
 <script src="script.js"></script>
+
+
 <canvas id="canvas" width="894" height="662"></canvas>
 <label style="cursor:pointer;	font-size:17px;	position: absolute;	color:black;	background-color: #FFCC99;	padding: 5px 10px;	z-index: 1;	bottom: 10px;	left: 320px;	user-select: none;	-webkit-user-select: none;	-khtml-user-select: none;	-moz-user-select: none;	-ms-user-select: none;	-webkit-touch-callout: none;" onclick="if (!window.__cfRLUnblockHandlers) return false; clearChat();" data-cf-modified-4584b754a552bbac87934f4d-="">Sohbeti temizle</label>
 <label style="cursor:pointer;	font-size:17px;	position: absolute;	color:black;	background-color: #FFCC99;	padding: 5px 10px;	z-index: 1;	bottom: 10px;	left: 480px;	user-select: none;	-webkit-user-select: none;	-khtml-user-select: none;	-moz-user-select: none;	-ms-user-select: none;	-webkit-touch-callout: none;" onclick="if (!window.__cfRLUnblockHandlers) return false; shareLocation();" data-cf-modified-4584b754a552bbac87934f4d-="">Yerimi paylaş</label>
 <input type="text" id="chat_textbox" maxlength="70" placeholder="Chat için 'Enter' tuşuna basın">
 <div style="font-family:'Ubuntu'">&nbsp;</div>
-<script type="text/javascript"></script>
+<script type="4584b754a552bbac87934f4d-text/javascript">
 function getGameMode(){
     const servers=[
             "ffa1.agariodns.cyou",
@@ -475,8 +510,6 @@ getGameMode();</script>
 </script>
 <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="4584b754a552bbac87934f4d-|49" defer=""></script><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon="{&quot;rayId&quot;:&quot;7f2d2f9e0d397222&quot;,&quot;version&quot;:&quot;2023.7.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;27d9399612d24b29bd77b5f9d147c302&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
 
-
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   // Kutuyu işaretle
@@ -493,6 +526,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
- 
+
+
+
+
+
 
 </body></html>
