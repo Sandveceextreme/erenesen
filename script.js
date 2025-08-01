@@ -125,10 +125,9 @@ window['start'] = () => {
     }
 var _0x394253 = document[_0x327871(0x1ad)](_0x327871(0x1d9))['value'];
 localStorage[_0x327871(0x24b)]('gameMode', _0x394253);
+
 for (let _0xed40a7 = 0x0; _0xed40a7 < 0x4; _0xed40a7++) {
     setTimeout(() => {
-        grecaptcha['ready'](function () {
-        });
     }, 0x1f4 * _0xed40a7);
 }
 }
