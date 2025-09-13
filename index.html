@@ -73,65 +73,6 @@
     }
 </script>
 <script async src="//api.adinplay.com/libs/aiptag/pub/AGV/play-unblocked.github.io/tag.min.js"></script>
- <style>
-    .side-banner {
-      position: fixed;
-      top: 50%;
-      width: 300px;
-      height: 600px;
-      transform: translateY(-50%);
-      z-index: 9999;
-       
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-
-    .side-banner.left {
-      left: 0;
-    }
-
-    .side-banner.right {
-      right: 0;
-    }
-
-    .bottom-banner {
-      position: fixed;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 728px;
-      height: 90px;
-       
-      z-index: 9999;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-
-    .close-btn {
-      position: absolute;
-      top: -15px; /* Outside the banner */
-      width: 30px;
-      height: 30px;
-      background: #000;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 16px;
-      line-height: 30px;
-      text-align: center;
-    }
-
-    .side-banner.left .close-btn {
-      right: -15px;
-    }
-
-    .side-banner.right .close-btn {
-      left: -15px;
-    }
-
-    .bottom-banner .close-btn {
-      right: -15px;
-    }
-  </style>
 </head>
 <body>
 
@@ -498,35 +439,6 @@ getGameMode();
 
   gtag('config', 'UA-115518244-1');
 </script>
- <div class="side-banner left" id="leftBanner">
-    <button class="close-btn" onclick="closeBanner('leftBanner')">X</button>
-    <div id='play-unblocked-github-io_300x600'>
-		<script type='text/javascript'>
-			aiptag.cmd.display.push(function() { aipDisplayTag.display('play-unblocked-github-io_300x600'); });
-		</script>
-	</div>
-  </div>
-
-  <div class="side-banner right" id="rightBanner">
-    <button class="close-btn" onclick="closeBanner('rightBanner')">X</button>
-    <div id='play-unblocked-github-io_300x600_2'>
-		<script type='text/javascript'>
-			aiptag.cmd.display.push(function() { aipDisplayTag.display('play-unblocked-github-io_300x600_2'); });
-		</script>
-	</div>
-  </div>
- <div class="bottom-banner" id="bottomBanner">
-    <!--<button class="close-btn" onclick="closeBanner('bottomBanner')">×</button>-->
-    <div id='play-unblocked-github-io_728x90'>
-		<script type='text/javascript'>
-			aiptag.cmd.display.push(function() { aipDisplayTag.display('play-unblocked-github-io_728x90'); });
-		</script>
-	</div>
-  </div>
-  <script>
-    function closeBanner(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"27d9399612d24b29bd77b5f9d147c302","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
