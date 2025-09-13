@@ -22,62 +22,10 @@
 	<meta name="twitter:image:src" content="/imgs/logo.webp">
 	<meta property="og:type" content="website" />
 
-<script>
-    window.aiptag = window.aiptag || {cmd: []};
-    aiptag.cmd.display = aiptag.cmd.display || [];
-    aiptag.cmd.player = aiptag.cmd.player || [];
-
-    // CMP tool settings
-    aiptag.cmp = {
-        show: true,
-        position: "centered",  // centered, bottom
-        button: true,
-        buttonText: "Privacy settings",
-        buttonPosition: "bottom-left" // bottom-left, bottom-right, bottom-center, top-left, top-right
-    };
-
-    // Player setup
-    aiptag.cmd.player.push(function() {
-        aiptag.adplayer = new aipPlayer({
-            AD_WIDTH: 960,
-            AD_HEIGHT: 540,
-            AD_DISPLAY: 'modal-center', // default, fullscreen, fill, center, modal-center
-            LOADING_TEXT: 'loading advertisement',
-            PREROLL_ELEM: function() { return document.getElementById('videoad'); },
-            AIP_COMPLETE: function(state) {
-                console.log("Ad Completed: " + state);
-            }
-        });
-    });
-
-   
-    let clickCount = 0;
-
-    function show_videoad_limited() {
-        clickCount++;
-
-        if (clickCount === 1 || (clickCount - 1) % 2 === 0) {
-            if (typeof aiptag.adplayer !== 'undefined') {
-                aiptag.cmd.player.push(function() {
-                    aiptag.adplayer.startVideoAd();
-                });
-            } else {
-                alert("Ad Could not be loaded, load your content here");
-                if (aiptag.adplayer && aiptag.adplayer.aipConfig) {
-                    aiptag.adplayer.aipConfig.AIP_COMPLETE();
-                }
-            }
-        } else {
-            console.log("no add showed: " + clickCount);
-        }
-    }
-</script>
 <script async src="//api.adinplay.com/libs/aiptag/pub/AGV/play-unblocked.github.io/tag.min.js"></script>
 </head>
 <body>
 
-
-<div id="videoad"></div>
   
     <section id="main-login-section" class="main-login-section">
 	  <div id="helloDialog">
